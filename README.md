@@ -2,7 +2,7 @@
 
 Accept Mollie payments in PeltyCMS checkout
 
-Official **payment gateway** for [PeltyCMS](https://github.com/MythicalLTD/PeltyCMS) — identifier `gateway-mollie`.
+Official payment gateway for [PeltyCMS](https://github.com/MythicalLTD/PeltyCMS).
 
 ## Why this addon
 
@@ -18,25 +18,21 @@ Hosts who want customers to pay invoices without leaving Pelty checkout.
 
 ## How it works
 
-1. Install **Mollie** from the [Mythical marketplace](https://market.mythicalsystems.org/marketplace/product/gateway-mollie) (or Pelty Admin → Addons → Marketplace).
-2. Open Pelty Admin and enter your Mollie credentials in the addon settings.
-3. Attach it to the products / forms / login flows you care about.
-4. New orders and sign-ins use Mollie automatically.
+1. Install **Mollie** from the [Mythical marketplace](https://market.mythicalsystems.org/marketplace/product/gateway-mollie) inside Pelty Admin → Addons.
+2. Open Pelty Admin → Payments, add your Mollie keys, and enable the gateway on the products you sell.
+3. Customers hit checkout / login / order flow as usual — Mollie runs in the background.
 
 ## Requirements
 
-- A running PeltyCMS panel with WASM addons enabled
-- Valid Mollie API / OAuth / panel credentials (depending on the integration)
-- Outbound HTTPS from the panel to Mollie
+- PeltyCMS with WASM addons enabled
+- Working Mollie credentials
+- Outbound HTTPS from your panel
 
 ## Get it
 
-[Mollie on Mythical Marketplace](https://market.mythicalsystems.org/marketplace/product/gateway-mollie)
-
-Free official build. Source for this package lives in this repository.
+**[Mollie on Mythical Marketplace](https://market.mythicalsystems.org/marketplace/product/gateway-mollie)**
 
 ## Support
 
-- Marketplace product page: https://market.mythicalsystems.org/marketplace/product/gateway-mollie
-- PeltyCMS core: https://github.com/MythicalLTD/PeltyCMS
-- Issues for this addon: use this repo’s Issues tab
+Bugs and questions for this addon → Issues on this repo.  
+PeltyCMS core → https://github.com/MythicalLTD/PeltyCMS
