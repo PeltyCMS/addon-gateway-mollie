@@ -1,31 +1,42 @@
 # Mollie
 
-Official **PeltyCMS** `gateway` WASM addon (`gateway-mollie`).
+Accept Mollie payments in PeltyCMS checkout
 
-## Install
+Official **payment gateway** for [PeltyCMS](https://github.com/MythicalLTD/PeltyCMS) — identifier `gateway-mollie`.
 
-1. Open Pelty Admin → Addons → Marketplace
-2. Set registry URL to `https://market.mythicalsystems.org/api/pelty/addons/registry.json`
-3. Download **Mollie**
+## Why this addon
 
-Marketplace: https://market.mythicalsystems.org/marketplace/product/gateway-mollie  
-Product ID (CI): `51`
+Hosts who want customers to pay invoices without leaving Pelty checkout.
 
-## Develop
+## Features
 
-This repository is a git submodule of [MythicalLTD/PeltyCMS](https://github.com/MythicalLTD/PeltyCMS) at `extensions/addons/mollie`.
+- Take invoice and checkout payments through **Mollie**
+- Signed webhook handling so paid invoices mark paid automatically
+- Fits Pelty tax, credits, refunds and multi-currency
+- Runs as sandboxed WASM — no custom PHP on your panel
+- Keys live in Pelty secrets, not in theme code
 
-```bash
-# from the PeltyCMS monorepo
-cargo xtask addons mollie
-```
+## How it works
 
-## Release (Mythic Marketplace)
+1. Install **Mollie** from the [Mythical marketplace](https://market.mythicalsystems.org/marketplace/product/gateway-mollie) (or Pelty Admin → Addons → Marketplace).
+2. Open Pelty Admin and enter your Mollie credentials in the addon settings.
+3. Attach it to the products / forms / login flows you care about.
+4. New orders and sign-ins use Mollie automatically.
 
-Same flow as [featherpanel-com/PterodactylPanelApi](https://github.com/featherpanel-com/PterodactylPanelApi):
+## Requirements
 
-1. Repo secrets: `MYTHIC_PRODUCT_ID`, `MYTHIC_RELEASE_TOKEN`
-2. Repo variable: `ADDON_DIR=mollie`
-3. Actions → **Release Addon** → Run workflow
+- A running PeltyCMS panel with WASM addons enabled
+- Valid Mollie API / OAuth / panel credentials (depending on the integration)
+- Outbound HTTPS from the panel to Mollie
 
-Publishes the packed `gateway-mollie.zip` via `MythicalLTD/.github/actions/publish-release@v1` and creates a GitHub Release.
+## Get it
+
+[Mollie on Mythical Marketplace](https://market.mythicalsystems.org/marketplace/product/gateway-mollie)
+
+Free official build. Source for this package lives in this repository.
+
+## Support
+
+- Marketplace product page: https://market.mythicalsystems.org/marketplace/product/gateway-mollie
+- PeltyCMS core: https://github.com/MythicalLTD/PeltyCMS
+- Issues for this addon: use this repo’s Issues tab
